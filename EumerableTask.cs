@@ -99,7 +99,6 @@ namespace PadawansTask15
         /// </example>
         public IEnumerable<string> GetPrefixItems(IEnumerable<string> data, string prefix)
         {
-            List<string> list = new List<string>();
             if (prefix == null)
             {
                 throw new ArgumentNullException();
@@ -110,14 +109,13 @@ namespace PadawansTask15
                 int i = d.IndexOf(prefix);
                 if (i == 0)
                 {
-                    list.Add(d);
+                    yield return d;
                 }
                 else if (prefix == "")
                 {
-                    list.Add(d);
+                    yield return d;
                 }
-            }
-            return list;
+            }            
         }
 
         /// <summary> Finds the 3 largest numbers from a sequence.</summary>
