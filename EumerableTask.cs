@@ -50,24 +50,21 @@ namespace PadawansTask15
         /// </example>
         public IEnumerable<int> GetStringsLength(IEnumerable<string> data)
         {
-            List<int> list = new List<int>();
-            data.ToList();
             foreach (string s in data)
             {
                 if (s == null)
                 {
-                    list.Add(0);
+                    yield return 0;
                 }
                 else if (s == "")
                 {
-                    list.Add(0);
+                    yield return 0;
                 }
                 else
                 {
-                    list.Add(s.Length);
+                    yield return s.Length;
                 }
-            }
-            return list;
+            }           
         }
 
         /// <summary>Transforms integer sequence to its square sequence, f(x) = x * x. </summary>
