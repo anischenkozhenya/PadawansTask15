@@ -18,24 +18,21 @@ namespace PadawansTask15
         /// </example>
         public IEnumerable<string> GetUppercaseStrings(IEnumerable<string> data)
         {
-            List<string> list = new List<string>();
-            data.ToList();
             foreach (string s in data)
             {
                 if (s == "")
                 {
-                    list.Add("");
+                    yield return "";
                 }
                 else if (s == null)
                 {
-                    list.Add(null);
+                    yield return null;
                 }
                 else
                 {
-                    list.Add(s.ToUpper());
+                    yield return s.ToUpper();
                 }
-            }
-            return list;
+            }            
         }
 
         /// <summary> Transforms an each string from sequence to its length.</summary>
