@@ -82,12 +82,10 @@ namespace PadawansTask15
         /// </example>
         public IEnumerable<long> GetSquareSequence(IEnumerable<int> data)
         {
-            List<long> list = new List<long>();
             foreach (long t in data)
             {
-                list.Add(t * t);
-            }
-            return list;
+                yield return (t * t);
+            }             
         }
 
         /// <summary> Filters a string sequence by a prefix value (case insensitive).</summary>
