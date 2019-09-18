@@ -132,21 +132,7 @@ namespace PadawansTask15
         /// </example>
         public IEnumerable<int> Get3LargestItems(IEnumerable<int> data)
         {
-            List<int> LagestThreeNum = new List<int>();
-
-            var SortData = from i in data orderby i descending select i;
-            if (SortData.ToArray().Length < 3)
-            {
-                return SortData.ToList();
-            }
-            else
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    LagestThreeNum.Add(SortData.ToArray()[i]);
-                }
-            }
-            return LagestThreeNum;
+            
         }
 
         /// <summary> Calculates sum of all integers from object array.</summary>
