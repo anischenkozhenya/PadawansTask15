@@ -132,7 +132,11 @@ namespace PadawansTask15
         /// </example>
         public IEnumerable<int> Get3LargestItems(IEnumerable<int> data)
         {
-            
+            IEnumerable<int> vs = from dt in data
+                                  orderby dt descending
+                                  select dt;
+            vs=vs.Take<int>(3);
+            return vs;
         }
 
         /// <summary> Calculates sum of all integers from object array.</summary>
